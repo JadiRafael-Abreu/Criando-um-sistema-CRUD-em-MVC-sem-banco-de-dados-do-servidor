@@ -1,0 +1,34 @@
+﻿@model Produto
+
+<title>Confirmar Exclusão</title>
+
+<h1>Certeza que deseja excluir este item?</h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.ProdutoId)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Status)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Descricao)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Preco)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">@Model.ProdutoId</td>
+                <td>@Model.Status</td>                
+                <td>@Model.Nome</td>
+                <td>@Model.Descricao</td>
+                <td>@Model.Preco</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br /><br /><br />
+<div class="d-grid gap-2">
+    <a asp-route-id="@Model.ProdutoId" asp-action="Excluir" class="btn btn-danger" role="button">Excluir</a>
+    <a asp-action="Listar" class="btn btn-secondary" role="button">Cancelar</a>
+</div>

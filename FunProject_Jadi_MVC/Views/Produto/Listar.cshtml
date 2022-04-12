@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Produto>
+
+<title>Listagem de Produtos</title>
+<h1 class="align-content-center">Lista de produtos</h1>
+
+<div>
+    <a asp-action="Criar">Criar um produto</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.ProdutoId)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Status)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Descricao)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Preco)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@Html.DisplayFor(modelItem => item.ProdutoId)</th>
+            <td>@Html.DisplayFor(modelItem => item.Status)</td>
+            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+            <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+            <td>@Html.DisplayFor(modelItem => item.Preco)</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a role="button" asp-route-id="@item.ProdutoId" asp-action="Editar" class="btn btn-secondary">Editar</a>
+                    <a role="button" asp-route-id="@item.ProdutoId" asp-action="ConfirmarExclusao" class="btn btn-warning">Apagar</a>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

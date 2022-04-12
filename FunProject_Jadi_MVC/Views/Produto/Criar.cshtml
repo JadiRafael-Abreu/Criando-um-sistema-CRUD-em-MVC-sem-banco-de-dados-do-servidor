@@ -1,0 +1,22 @@
+﻿@model Produto
+
+<title>Criar Produto</title>
+
+<h1>Criar Produto</h1>
+
+<form asp-controller="Produto" asp-action="Criar" method="post">
+    <div class="mb-3">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" >        
+    </div>
+    <div class="mb-3">
+        <label for="Descricao" class="form-label">Descrição</label>
+        <input type="text" asp-for="Descricao">
+    </div>
+    <div class="mb-3">
+        <label for="Preço" class="form-label">Preço</label>
+        <input type="text" asp-for="Preco">
+    </div>
+    <button type="submit" class="btn btn-primary">Criar</button>
+</form>
+

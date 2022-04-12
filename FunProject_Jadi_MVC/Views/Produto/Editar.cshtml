@@ -1,0 +1,27 @@
+﻿@model Produto
+
+<title>Editar Produto</title>
+
+<h1>Editar Produto</h1>
+
+<form asp-controller="Produto" asp-action="Atualizar" method="post">
+
+    <input type="hidden" asp-for="ProdutoId" />
+    <div class="mb-3">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome">
+    </div>
+    <div class="mb-3">
+        <label for="Descricao" class="form-label">Descrição</label>
+        <input type="text" asp-for="Descricao">
+    </div>
+    <div class="mb-3">
+        <label for="Preço" class="form-label">Preço</label>
+        <input type="text" asp-for="Preco">
+    </div>
+    <button type="submit" class="btn btn-dark">Salvar Alterações</button>
+</form>
+<br />
+<div>
+    <a asp-action="Listar" class="btn btn-secondary" role="button">Cancelar</a>
+</div>
